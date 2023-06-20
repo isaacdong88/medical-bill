@@ -139,7 +139,7 @@
 }
 
 .input-field {
-  /* border: solid red; */
+  border: solid red;
   width: 90%;
   height: 4.2rem;
   margin: auto;
@@ -178,4 +178,30 @@
   font-weight: bold;
   background-color: #8c87d6;
   border-radius: 0.5rem;
+}
+
+.previewPage {
+  border: solid red;
+  height: 48rem;
+  width: 55%;
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 0.5em;
+}
+
+.previewInfo {
+  border: solid orange;
+  width: 100%;
+}
+
+.previewImage {
+  border: solid green;
+  width: 100%;
+}
+
+.back-btn {
+  border: solid blue;
+  width: 100%;
 }
