@@ -10,7 +10,7 @@ function Dashboard() {
       <Routes>
         <Route path="/" element={<MyAccount />}></Route>
         <Route path="/medicalbills" element={<MedicalBill />}></Route>
-        <Route path="/paybills" element={<PayBills></PayBills>}></Route>
+        <Route path="/paybills" element={<PayBills />}></Route>
       </Routes>
     </div>
   );
