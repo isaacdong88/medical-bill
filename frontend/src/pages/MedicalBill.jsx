@@ -167,15 +167,6 @@ function MedicalBill() {
                 <option value="Wisconsin">Wisconsin</option>
                 <option value="Wyoming">Wyoming</option>
               </select>
-
-              {/* <input
-                type="text"
-                id="state"
-                name="state"
-                value={medicalForm.state}
-                required
-                onChange={handleChange}
-              /> */}
             </div>
 
             <div className="address">
@@ -289,21 +280,38 @@ function MedicalBill() {
         </h1>
       </div>
       <div className="previewPage">
+        <div className="review-header">
+          <h2>Review</h2>
+        </div>
         <div className="previewInfo">
-          <div className="input-field">First Name {medicalForm.firstname}</div>
-          <div className="input-field">Last Name {medicalForm.lastname}</div>
+          <div className="preview-field">
+            First Name: {medicalForm.firstname}
+          </div>
+          <div className="preview-field">Last Name: {medicalForm.lastname}</div>
+          <div className="preview-field">Address: {medicalForm.address}</div>
+          <div className="preview-field">State: {medicalForm.state}</div>
+          <div className="preview-field">City: {medicalForm.city}</div>
+          <div className="preview-field">Zip Code: {medicalForm.zipcode}</div>
+          <div className="preview-field">Hospital: {medicalForm.hospital}</div>
+          <div className="preview-field">
+            Date of Service: {medicalForm.servicedate}
+          </div>
+          <div className="preview-field">
+            Bill Amount: ${medicalForm.billamount}
+          </div>
         </div>
         <div className="previewImage">
           <img src={medicalForm.image} alt="none" />
         </div>
-        <div className="back-btn">
+        <div className="submit-btn">
           <button
             onClick={() => {
               setReviewBill(true);
             }}
           >
-            Go Back
+            &#8592; Go Back
           </button>
+          <button>Submit</button>
         </div>
       </div>
     </div>
