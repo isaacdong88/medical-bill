@@ -7,11 +7,12 @@ function MyAccount() {
     <div>
       <div>My Account</div>
       <button
+        className="enterbill-btn"
         onClick={() => {
           navigate("/medicalbills");
         }}
       >
-        Enter New Bill
+        New Bill
       </button>
     </div>
   );

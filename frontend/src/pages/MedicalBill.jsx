@@ -25,12 +25,16 @@ function MedicalBill() {
   };
 
   const handleImage = async (event) => {
-    const file = event.target.files[0];
-    const base64 = await converToBase64(file);
-    //use the event object to detect key and value to update
+    let imageList = [];
+    for (let i = 0; i < event.target.files.length; i++) {
+      const file = event.target.files[i];
+      const base64 = await converToBase64(file);
+      imageList.push(base64);
+    }
+    // //use the event object to detect key and value to update
     setMedicalForm({
       ...medicalForm,
-      image: base64,
+      image: imageList,
     });
     console.log(medicalForm);
   };
@@ -255,14 +259,18 @@ function MedicalBill() {
               name="image"
               accept=".jpeg, .png, .jpg"
               required
+              multiple="multiple"
               onChange={handleImage}
             />
           </div>
 
           <div className="review-btn">
             <button
+              type="submit"
               onClick={() => {
-                setReviewBill(false);
+                if (!Object.values(medicalForm).includes("")) {
+                  setReviewBill(false);
+                }
               }}
             >
               Review &#8594;
@@ -301,7 +309,9 @@ function MedicalBill() {
           </div>
         </div>
         <div className="previewImage">
-          <img src={medicalForm.image} alt="none" />
+          {medicalForm.image.map((photo) => {
+            return <img src={photo} alt="none" />;
+          })}
         </div>
         <div className="submit-btn">
           <button

@@ -360,3 +360,12 @@
   background-color: #8c87d6;
   border-radius: 0.5rem;
 }
+
+.enterbill-btn {
+  width: 6.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #8c87d6;
+  border-radius: 0.5rem;
+}
