@@ -7,18 +7,44 @@ const billsSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    firstName: {
+    firstname: {
       type: String,
+      required: true,
     },
-    lastName: {
+    lastname: {
       type: String,
+      required: true,
     },
-    review: {
+    address: {
       type: String,
-      // required: true,
+      required: true,
     },
-    rating: {
-      type: Number,
+    state: {
+      type: String,
+      required: true,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
+    zipcode: {
+      type: String,
+      required: true,
+    },
+    hospital: {
+      type: String,
+      required: true,
+    },
+    servicedate: {
+      type: String,
+      required: true,
+    },
+    billamount: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: Array,
       required: true,
     },
   },

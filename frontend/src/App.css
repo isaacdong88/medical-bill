@@ -55,7 +55,7 @@
 
 .nav-links {
   /* border: solid blue; */
-  height: 2rem;
+  height: 1.8rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;

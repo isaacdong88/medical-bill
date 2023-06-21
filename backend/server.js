@@ -25,7 +25,7 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
 
-Routes;
+//Routes
 const userRoute = require("./routes/User");
 const billsRoute = require("./routes/Bills");
 

@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import truffleHealth from "../images/truffleHealth.png";
 import docIcon from "../images/docIcon.png";
 import homeIcon from "../images/homeIcon.png";
 import logoutIcon from "../images/logoutIcon.png";
 import paymentIcon from "../images/paymentIcon.png";
 import profileIcon from "../images/profileIcon.png";
+import { logout, reset } from "../features/auth/authSlice";
 
 function SideNav() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className="side-nav">
       <div className="logo">
@@ -47,7 +50,14 @@ function SideNav() {
           <h4>Pay Bills</h4>
         </div>
 
-        <div className="nav-links">
+        <div
+          onClick={() => {
+            dispatch(logout());
+            dispatch(reset());
+            navigate("/welcome");
+          }}
+          className="nav-links"
+        >
           <img src={logoutIcon} alt="icon" />
           <h4>Log Out</h4>
         </div>

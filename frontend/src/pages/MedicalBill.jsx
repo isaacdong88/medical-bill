@@ -1,7 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { createBill } from "../features/bills/billsSlice";
+import { useNavigate } from "react-router-dom";
 
 function MedicalBill() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [reviewBill, setReviewBill] = useState(true);
   const [medicalForm, setMedicalForm] = useState({
     firstname: "",
@@ -15,6 +20,19 @@ function MedicalBill() {
     billamount: "",
     image: "",
   });
+
+  const {
+    firstname,
+    lastname,
+    address,
+    state,
+    city,
+    zipcode,
+    hospital,
+    servicedate,
+    billamount,
+    image,
+  } = medicalForm;
 
   const handleChange = async (event) => {
     setMedicalForm({
@@ -42,6 +60,32 @@ function MedicalBill() {
   const handleSubmit = (event) => {
     //prevent page from refreshing on form submission
     event.preventDefault();
+    const billData = {
+      firstname,
+      lastname,
+      address,
+      state,
+      city,
+      zipcode,
+      hospital,
+      servicedate,
+      billamount,
+      image,
+    };
+    dispatch(createBill(billData));
+    navigate("/");
+    setMedicalForm({
+      firstname: "",
+      lastname: "",
+      address: "",
+      state: "",
+      city: "",
+      zipcode: "",
+      hospital: "",
+      servicedate: "",
+      billamount: "",
+      image: "",
+    });
   };
 
   return reviewBill ? (
@@ -309,7 +353,7 @@ function MedicalBill() {
           </div>
         </div>
         <div className="previewImage">
-          {medicalForm.image.map((photo) => {
+          {medicalForm.image?.map((photo) => {
             return <img src={photo} alt="none" />;
           })}
         </div>
@@ -321,7 +365,7 @@ function MedicalBill() {
           >
             &#8592; Go Back
           </button>
-          <button>Submit</button>
+          <button onClick={handleSubmit}>Submit</button>
         </div>
       </div>
     </div>
