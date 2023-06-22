@@ -21,6 +21,7 @@ function Login() {
 
   useEffect(() => {
     if (isError) {
+      alert(message);
       console.log(message);
     }
     if (isSuccess || user) {

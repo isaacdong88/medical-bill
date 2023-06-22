@@ -23,6 +23,7 @@ function SignUp() {
 
   useEffect(() => {
     if (isError) {
+      alert(message);
       console.log(message);
     }
     if (isSuccess || user) {
@@ -56,9 +57,6 @@ function SignUp() {
     console.log(formData, "*");
   };
 
-  if (isLoading) {
-    return "Page Loading";
-  }
   return (
     <div className="login-form">
       <div className="form-register">
