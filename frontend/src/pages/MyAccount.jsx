@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { deleteBill } from "../features/bills/billsSlice";
 
 function MyAccount() {
+  const dispatch = useDispatch();
   const [bills, setBills] = useState(null);
   const navigate = useNavigate();
   const { user, isLoading, isError, isSuccess, message } = useSelector(
@@ -18,6 +20,16 @@ function MyAccount() {
         return (
           <div key={key} className="medicalbills">
             <div className="medicalbill-header">
+              <div>
+                <button
+                  onClick={async () => {
+                    await dispatch(deleteBill(bill._id));
+                    fetchBills();
+                  }}
+                >
+                  X
+                </button>
+              </div>
               <h4>Hospital: {bill.hospital}</h4>
               <h4>Service Date: {bill.servicedate}</h4>
             </div>
@@ -45,7 +57,9 @@ function MyAccount() {
       <div className="header2">
         <h1>View your medical bills</h1>
       </div>
-      <div className="billdisplay">{bills}</div>
+      <div className="billdisplay">
+        {bills?.length > 0 ? bills : <div>You have no bills</div>}
+      </div>
       <button
         className="enterbill-btn"
         onClick={() => {
