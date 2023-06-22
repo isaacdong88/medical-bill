@@ -553,7 +553,14 @@ body {
   /* border: solid peru; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0.8rem 0.6rem;
+}
+
+.medicalbills-btn {
+  /* border: solid #7e77e5; */
+  display: flex;
+  justify-content: center;
 }
 
 .billimages {

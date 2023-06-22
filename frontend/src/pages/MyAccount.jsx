@@ -21,6 +21,12 @@ function MyAccount() {
           <div key={key} className="medicalbills">
             <div className="medicalbill-header">
               <div>
+                <h4>Hospital: {bill.hospital}</h4>
+              </div>
+              <div>
+                <h4>Service Date: {bill.servicedate}</h4>
+              </div>
+              <div className="medicalbills-btn">
                 <button
                   onClick={async () => {
                     await dispatch(deleteBill(bill._id));
@@ -30,8 +36,6 @@ function MyAccount() {
                   X
                 </button>
               </div>
-              <h4>Hospital: {bill.hospital}</h4>
-              <h4>Service Date: {bill.servicedate}</h4>
             </div>
             <div className="billimages">
               {bill.image.map((photo) => {
