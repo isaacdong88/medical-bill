@@ -8,8 +8,10 @@ import { useSelector, useDispatch } from "react-redux";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import WelcomePage from "./pages/WelcomePage";
+import detectivePig from "../src/images/detectivePig.png";
 
 function App() {
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
   return (
     <>
@@ -19,8 +21,11 @@ function App() {
           <Dashboard />
         </div>
       ) : (
-        <div>
+        <div className="App2">
           <WelcomePage />
+          <div className="detectivePig">
+            <img src={detectivePig} />
+          </div>
           <Routes>
             <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/login" element={<Login />}></Route>

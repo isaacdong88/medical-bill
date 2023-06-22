@@ -54,7 +54,7 @@ function SideNav() {
           onClick={() => {
             dispatch(logout());
             dispatch(reset());
-            navigate("/welcome");
+            navigate("/login");
           }}
           className="nav-links"
         >

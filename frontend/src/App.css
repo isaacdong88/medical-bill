@@ -2,12 +2,21 @@
   margin: 0;
 }
 
+body {
+  background-color: #f6f6fe;
+}
+
 .colorPurple {
   color: #7e77e5;
 }
 
 .App {
   display: flex;
+}
+
+.App2 {
+  display: flex;
+  flex-direction: column;
 }
 
 .side-nav {
@@ -91,6 +100,20 @@
   /* border: solid green; */
   height: 6.6rem;
   width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.header2 {
+  /* border: solid green; */
+  height: 6.6rem;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -368,4 +391,176 @@
   font-weight: bold;
   background-color: #8c87d6;
   border-radius: 0.5rem;
+  position: fixed;
+  top: 12%;
+  left: 93%;
+  transform: translate(-50%, -50%);
+}
+
+.welcome-nav {
+  background-color: #8c87d6;
+  width: 100%;
+  min-height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-logo {
+  /* border: solid red; */
+  height: 2.5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.welcome-logo img {
+  width: 100%;
+}
+
+.login-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  /* border: solid black; */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  height: 45vh;
+}
+
+.form-register {
+  /* border: solid red; */
+  width: 30%;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form form {
+  border-radius: 0.5rem;
+  height: 15rem;
+  width: 20rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form input {
+  width: 15rem;
+  height: 4vh;
+  margin-top: 0.3rem;
+  background-color: #f5f7f8;
+  border: none;
+  font-weight: bold;
+  text-indent: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.login-form button {
+  width: 6rem;
+  height: 2.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #8c87d6;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.welcome-btn button {
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #cdfa93;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+
+.detectivePig {
+  position: fixed;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  /* border: solid red; */
+  width: 35rem;
+  height: 35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detectivePig img {
+  width: 100%;
+}
+
+.billdisplay {
+  /* border: solid green; */
+  height: 33rem;
+  width: 50em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; */
+  text-align: center;
+  font-size: 1.5rem;
+  margin: auto;
+  margin-top: 1rem;
+  overflow: scroll;
+}
+
+.billdisplay::-webkit-scrollbar {
+  display: none;
+}
+
+.medicalbills {
+  /* border: solid red; */
+  width: 24em;
+  height: 20em;
+  margin: auto;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  overflow: scroll;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.medicalbills::-webkit-scrollbar {
+  display: none;
+}
+.medicalbill-header {
+  /* border: solid peru; */
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem 0.6rem;
+}
+
+.billimages {
+  /* border: solid yellow; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.billimage {
+  border: groove;
+  width: 90%;
+  height: 35rem;
+  margin-top: 2rem;
+}
+
+.billimage img {
+  width: 100%;
+  height: 100%;
 }

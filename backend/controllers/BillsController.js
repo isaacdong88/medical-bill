@@ -3,10 +3,10 @@ const Bills = require("../models/bills");
 //Get user bills, route GET /bills
 const fetchBills = async (req, res) => {
   try {
-    const bills = await Bills.find({ user: req.user.id });
+    const bills = await Bills.find({ user: req.params.id });
     res.status(200).json(bills);
   } catch (error) {
-    res.status(400).json({ message: "Can't find bills" });
+    res.status(400).json({ message: "Can't find bill w" });
   }
 };
 
