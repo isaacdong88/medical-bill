@@ -57,7 +57,7 @@ function MedicalBill() {
     console.log(medicalForm);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     //prevent page from refreshing on form submission
     event.preventDefault();
     const billData = {
@@ -72,7 +72,7 @@ function MedicalBill() {
       billamount,
       image,
     };
-    dispatch(createBill(billData));
+    await dispatch(createBill(billData));
     navigate("/");
     setMedicalForm({
       firstname: "",

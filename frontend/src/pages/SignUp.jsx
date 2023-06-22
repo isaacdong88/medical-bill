@@ -21,6 +21,17 @@ function SignUp() {
     (state) => state.auth
   );
 
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (isSuccess || user) {
+      navigate("/");
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+
   // handleChange - updates formData when we type into form
   const handleChange = (event) => {
     //use the event object to detect key and value to update
@@ -41,7 +52,6 @@ function SignUp() {
         password,
       };
       dispatch(register(userData));
-      navigate("/");
     }
     console.log(formData, "*");
   };

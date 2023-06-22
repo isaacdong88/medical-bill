@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, reset } from "../features/auth/authSlice";
-import { getBills } from "../features/bills/billsSlice";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -24,7 +23,7 @@ function Login() {
     if (isError) {
       console.log(message);
     }
-    if (user) {
+    if (isSuccess || user) {
       navigate("/");
     }
 
@@ -45,14 +44,10 @@ function Login() {
       password,
     };
     dispatch(login(userData));
-    navigate("/");
 
     console.log(formData, "*");
   };
 
-  if (isLoading) {
-    return "Page Loading";
-  }
   return (
     <div className="login-form">
       <div className="form-register">

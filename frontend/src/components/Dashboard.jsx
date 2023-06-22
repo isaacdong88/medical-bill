@@ -4,6 +4,8 @@ import MedicalBill from "../pages/MedicalBill";
 import MyAccount from "../pages/MyAccount";
 import PayBills from "../pages/PayBills";
 import WelcomePage from "../pages/WelcomePage";
+import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
 
 function Dashboard() {
   return (
@@ -13,6 +15,8 @@ function Dashboard() {
         <Route path="/medicalbills" element={<MedicalBill />}></Route>
         <Route path="/paybills" element={<PayBills />}></Route>
         <Route path="/welcome" element={<WelcomePage />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
       </Routes>
     </div>
   );
